@@ -1,0 +1,44 @@
+body {
+  background: #ff5733;
+}
+
+.square {
+  color: black;
+  padding: 5px;
+  text-align: center;
+  font-size: 30px;
+  font-style: Heebo;
+  margin: 5px;
+  line-height: 50px;
+}
+
+#keyboard > .line {
+  display: flex;
+}
+
+#keyboard > .line > div {
+  padding: 5px;
+  background-color: white;
+  border-radius: 3px;
+  width: 15px;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  margin: 3px;
+}
+
+.green {
+  background-color: greenyellow;
+}
+
+.yellow {
+  background-color: #ffffe0;
+}
+
+.gray {
+  background-color: gray;
+}
+
+.wordle-line {
+  display: flex;
+}
