@@ -1,5 +1,3 @@
-const words = ["start", "", "", "", "", ""];
-
 const results = ["green", "gray", "yellow", "yellow", "green"];
 
 // const item = five_letter_item.toUpperCase();
@@ -28,11 +26,6 @@ function render(name) {
   }
 }
 
-// on click
-function Qclicked() {
-  document.getElementById("Qkey");
-}
-
 function draw(value) {
   wrapper.innerHTML = "";
   value.forEach(function (item) {
@@ -40,9 +33,42 @@ function draw(value) {
   });
 }
 
+let activeLine = 0;
+
 function onEnter(value) {
-  wordle[0] += value;
+  // wordle[0] += value;
+  wordle[activeLine] += value;
   draw(wordle);
 }
 
 draw(wordle);
+document.addEventListener("keyup", function (event) {
+  if (event.keyCode == 13) {
+    activeLine++;
+  }
+});
+createKeyboard();
+
+function createKeyboard() {
+  const lines = ["qwertyuiop", "asdfghjkl", "zxcvbnm"];
+
+  // append it to the keyboard div
+  const keyboard = document.getElementById("keyboard");
+  lines.forEach(function (words) {
+    // create a div whith class line
+    const line = document.createElement("div");
+    line.className = "line";
+    keyboard.appendChild(line);
+    words.split("").forEach(function (ch) {
+      // create a div with innerhtml q
+      const word = document.createElement("div");
+      word.className = "word";
+      line.appendChild(word);
+      // add click handler and add q to wordle
+      word.innerHTML = ch.toUpperCase();
+      word.addEventListener("click", function () {
+        onEnter(ch);
+      });
+    });
+  });
+}
