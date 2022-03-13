@@ -27,16 +27,22 @@ body {
   margin: 3px;
 }
 
-.green {
+div.green {
   background-color: greenyellow;
 }
 
-.yellow {
+div.yellow {
   background-color: #ffffe0;
 }
 
-.gray {
+div.gray {
   background-color: gray;
+}
+
+.square {
+  height: 50px;
+  width: 50px;
+  background-color: #ffffff;
 }
 
 .wordle-line {
